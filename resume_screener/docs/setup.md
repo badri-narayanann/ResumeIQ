@@ -57,6 +57,12 @@ npm install
 npm run dev
 ```
 
+### If `npm` is not recognized
+
+If you see an error like "'npm' is not recognized" or "npm: command not found", install Node.js (which includes `npm`) using one of the platform-specific options in `docs/frontend.md#troubleshooting`.
+
+After installing Node.js, verify `node -v` and `npm -v`, then run `npm install` and `npm run dev` from the `frontend/` folder.
+
 If you do not have Node installed system-wide, do not commit any locally downloaded Node runtime or `node_modules` into Git — the repository ignores `.local/` and `frontend/node_modules/` via `.gitignore`.
 
 ## Notes
