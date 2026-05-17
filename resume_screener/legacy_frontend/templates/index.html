@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <nav>
+    <div class="wrap">
+      <div class="logo">Resume<span>IQ</span></div>
+      <div class="nav-tag">AI Screener</div>
+    </div>
+  </nav>
+
+  <div class="wrap">
+    <div class="hero">
+      <div class="hero-badge">Powered by NLP &amp; Machine Learning</div>
+      <h1>Screen Smarter,<br />Hire <em>Faster</em></h1>
+      <p>Upload resumes and a job description. Our AI ranks candidates by match score using TF-IDF, cosine similarity, and skill gap analysis.</p>
+    </div>
+
+    <div class="stats-bar">
+      <div class="stat"><div class="stat-num">~70%</div><div class="stat-label">Faster Screening</div></div>
+      <div class="stat"><div class="stat-num">TF-IDF</div><div class="stat-label">NLP Algorithm</div></div>
+      <div class="stat"><div class="stat-num">PDF/DOCX</div><div class="stat-label">Supported Formats</div></div>
+      <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Local & Private</div></div>
+    </div>
+
+    <div class="main-card">
+      <div class="card-header">
+        <div class="card-icon">🎯</div>
+        <div>
+          <h2>New Screening Session</h2>
+          <p>Paste a job description and upload candidate resumes</p>
+        </div>
+      </div>
+      <div class="card-body">
+        <div id="form-area">
+          <div class="form-grid">
+            <div class="field">
+              <label>Job Title</label>
+              <input type="text" id="job_title" placeholder="e.g. Data Analyst, Python Developer" />
+            </div>
+            <div class="field">
+              <label>Upload Resumes (PDF / DOCX / TXT)</label>
+              <div class="drop-zone" id="dropZone">
+                <input type="file" id="resumeFiles" multiple accept=".pdf,.docx,.txt" />
+                <div class="drop-icon">📂</div>
+                <h3>Drop resumes here</h3>
+                <p>or <span id="browseBtn">click to browse</span> — multiple files supported</p>
+                <div class="file-list" id="fileList"></div>
+              </div>
+            </div>
+            <div class="field full">
+              <label>Job Description</label>
+              <textarea id="job_description" placeholder="Paste the full job description here — required skills, responsibilities, qualifications..."></textarea>
+            </div>
+          </div>
+          <button class="btn-screen" id="screenBtn" type="button">⚡ Screen Candidates</button>
+        </div>
+
+        <div class="loading" id="loading">
+          <div class="spinner"></div>
+          <p>Analysing resumes with NLP…</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="results">
+      <div class="results-header">
+        <div>
+          <div class="results-title" id="resultsTitle">Results</div>
+          <div class="results-meta" id="resultsMeta"></div>
+        </div>
+        <button class="btn-reset" id="resetBtn" type="button">← New Session</button>
+      </div>
+      <div id="candidateList"></div>
+    </div>
+
+    <div class="history-section">
+      <div class="section-title">Recent Screenings</div>
+      <table class="history-table">
+        <thead>
+          <tr>
+            <th>#</th><th>Job Title</th><th>Date</th><th>Candidates</th><th>Top Score</th>
+          </tr>
+        </thead>
+        <tbody id="historyBody">
+          <tr><td colspan="5" style="color:var(--muted);text-align:center">No history yet</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <footer>
+    <div class="wrap">ResumeIQ — Built with Python, Flask, NLTK &amp; Scikit-learn</div>
+  </footer>
+{% endblock %}

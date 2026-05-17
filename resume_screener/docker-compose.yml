@@ -1,0 +1,16 @@
+version: '3.9'
+services:
+  resumeiq:
+    build: .
+    ports:
+      - '5000:5000'
+    environment:
+      - HOST=0.0.0.0
+      - PORT=5000
+      - FLASK_DEBUG=0
+      - SECRET_KEY=change-me-in-production
+      - UPLOAD_FOLDER=/app/uploads
+      - DB_PATH=/app/screener.db
+    volumes:
+      - ./uploads:/app/uploads
+      - ./screener.db:/app/screener.db

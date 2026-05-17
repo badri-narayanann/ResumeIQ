@@ -1,0 +1,49 @@
+# Python files
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Node modules and build artifacts
+node_modules/
+frontend/node_modules/
+frontend/dist/
+
+# Local Node runtime and Vite log
+.local/
+frontend/vite_dev.log
+
+# Django stuff
+*.sqlite3
+
+# Database files
+*.db
+screener.db
+
+# Uploaded content
+uploads/
+!uploads/.gitkeep
+
+# Environment variables
+.env
+.env.*
+
+# VS Code
+.vscode/
+
+# JetBrains
+.idea/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

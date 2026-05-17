@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "resumeiq"
+version = "0.1.0"
+description = "AI-powered resume screening and candidate ranking application."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "Flask==3.0.3",
+  "Werkzeug==3.0.3",
+  "nltk==3.8.1",
+  "scikit-learn==1.5.1",
+  "numpy==1.26.4",
+  "pandas==2.2.3",
+  "pypdf==3.17.0",
+  "docx2txt==0.8",
+  "gunicorn==21.0.0",
+]
+
+[tool.black]
+line-length = 88
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
